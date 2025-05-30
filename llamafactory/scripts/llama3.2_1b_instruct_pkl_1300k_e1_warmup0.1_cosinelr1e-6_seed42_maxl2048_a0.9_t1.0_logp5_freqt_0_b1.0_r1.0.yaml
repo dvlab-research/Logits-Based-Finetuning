@@ -1,0 +1,52 @@
+### model
+model_name_or_path: /dataset-vlm/jingyaoli/MoTCoderv2/models/Llama-3.2-1B-Instruct
+cache_dir: /dataset-vlm/jingyaoli/MoTCoderv2/DataSelection/cache
+
+### distill
+use_distill: true
+distill_alpha: 0.9
+distill_t: 1.0
+num_logprobs: 5
+# num_freq_tokens: 10
+distill_beta: 1.0
+distill_gamma: 1.0
+# freq_tokens_path: '/dataset-vlm/jingyaoli/MoTCoderv2/DataSelection/data/llama3.1_70b_logits/llama_factory/statistics/openmathinstruct2_1m_prompt_top_100_prob.json'
+use_progressive_distill: False
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: /dataset-vlm/jingyaoli/MoTCoderv2/LLaMA-Factory/examples/deepspeed/ds_z3_config.json
+
+### dataset
+dataset: OpenMathInstruct-2-1M,metamath_gsm8k
+template: llama3
+cutoff_len: 2048
+# max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 128
+
+### output
+output_dir: /dataset-vlm/jingyaoli/MoTCoderv2/DataSelection/output_vlma/nvidia/llama3.2_1b_instruct_pkl_1200k_e1_warmup0.1_cosinelr1e-6_seed42_maxl2048_a0.9_t1.0_logp5_freqt_0_b1.0_r1.0
+logging_steps: 10
+save_steps: 1000
+plot_loss: true
+overwrite_output_dir: false
+
+### train
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-6
+num_train_epochs: 1
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: false
+ddp_timeout: 180000000
+
+### eval
+# val_size: 0.01
+# per_device_eval_batch_size: 32
+# eval_strategy: steps
+# eval_steps: 500
+# seed: 42

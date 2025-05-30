@@ -1,0 +1,18 @@
+{
+  "metamath_gsm8k": {
+    "file_name": "data/llama3.1_70b_logits/llama_factory/metamath_gsm8k_prompt_logprobs.jsonl",
+    "columns": {
+      "prompt": "prompt",
+      "response": "ground_truth",
+      "logprobs": "logprobs"
+    }
+  },
+  "OpenMathInstruct-2-1M": {
+    "file_name": "data/llama3.1_70b_logits/llama_factory/openmathinstruct2_1m_prompt_logprobs.jsonl",
+    "columns": {
+      "prompt": "prompt",
+      "response": "ground_truth",
+      "logprobs": "logprobs"
+    }
+  }
+}
