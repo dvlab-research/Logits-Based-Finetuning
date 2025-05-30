@@ -7,7 +7,16 @@
 • 📃 Paper (TO be released) <br>
 </p>
 
-In recent years, developing compact and efficient large language models (LLMs) has emerged as a thriving area of research. Traditional Supervised Fine-Tuning (SFT), which relies on singular ground truth labels, often fails to capture  token-level dependencies and linguistic diversity. To address these limitations, we propose a logits-based fine-tuning framework that integrates the strengths of supervised learning and knowledge distillation. Our approach constructs enriched training targets by combining teacher logits with ground truth labels, preserving both correctness and linguistic diversity. This ensures more reliable and effective training. We constructed a large-scale 1.2M logits dataset and trained a series of science-focused models. Experimental results demonstrate that our method achieves significant improvements, with accuracy gains of 18% on Mawps and 22.7% on TabMWP. Across nine widely used mathematical benchmarks, our method consistently outperforms prior SFT models, achieving an average improvement of 7.28%. 
+**Logits-Based Finetuning** integrates the strengths of supervised learning and knowledge distillation by combining teacher logits with ground truth labels, preserving both correctness and linguistic diversity. This ensures more reliable and effective training.  
+
+<div style="text-align: center;">
+    <img src="./images/example.png" alt="example" />
+</div>
+
+## Performance
+<div style="text-align: center;">
+    <img src="./images/performance.png" alt="performance" />
+</div>
 
 ## Train
 - **Data**: [huggingface](https://huggingface.co/datasets/JingyaoLi/Science-Logits-1.2M)
