@@ -4,7 +4,7 @@
 • 🤗 <a href="https://huggingface.co/JingyaoLi/ScienceLLaMA-3b" target="_blank">ScienceLLaMA-3B </a> 
 • 🤗 <a href="https://huggingface.co/JingyaoLi/ScienceLLaMA-1b" target="_blank">ScienceLLaMA-1B </a> 
 • 🐱 <a href="Logits-based Finetuning" target="_blank">Code</a> 
-• 📃 Paper (TO be released) <br>
+• 📃 <a href="https://arxiv.org/abs/2505.24461" target="_blank">Paper</a> 
 </p>
 
 **Logits-Based Finetuning** integrates the strengths of supervised learning and knowledge distillation by combining teacher logits with ground truth labels, preserving both correctness and linguistic diversity. This ensures more reliable and effective training.  
@@ -59,4 +59,16 @@ pip install transformers==4.42.3
 - **Run**
 ```bash
 bash evaluation/sh/eval.sh "qwen25-math-cot" $MODEL_NAME_OR_PATH
+```
+
+## Citation
+If you find this project useful in your research, please consider citing:
+
+```
+@article{li2025logits,
+  title={Logits-Based Finetuning},
+  author={Li, Jingyao and Yang, Senqiao and Wu, Sitong and Shi, Han and Zheng, Chuanyang and Xu, Hong and Jia, Jiaya},
+  journal={arXiv preprint arXiv:2505.24461},
+  year={2025}
+}
 ```
